@@ -17,4 +17,6 @@ class Tasks extends MY_Model {
         {
                 parent::__construct('tasks', 'id');
         }
+        
+        
 }
