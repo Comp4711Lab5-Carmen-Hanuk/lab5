@@ -1,6 +1,7 @@
 <html> 
     <head>
         <meta charset="UFT-8">  
+        <title></title>
     </head>
         <body>
             <h3>Tasks by Priority</h3>
