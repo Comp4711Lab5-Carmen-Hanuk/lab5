@@ -1,4 +1,4 @@
 ## Help Wanted ! 
-Painting and home decor job available. 
+We need Java, C#, and PHP developer. 
 Please contact for more information @
-*2222-3333-99999*
+*604-111-BCIT*
