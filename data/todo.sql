@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `ci_sessions`
 --
 
+DROP TABLE IF EXISTS `ci_sessions`;
 CREATE TABLE `ci_sessions` (
   `id` varchar(128) NOT NULL,
   `ip_address` varchar(45) NOT NULL,
@@ -39,6 +40,7 @@ CREATE TABLE `ci_sessions` (
 -- Table structure for table `flags`
 --
 
+DROP TABLE IF EXISTS `flags`;
 CREATE TABLE `flags` (
   `id` int(1) NOT NULL,
   `meaning` varchar(6) DEFAULT NULL
@@ -57,6 +59,7 @@ INSERT INTO `flags` (`id`, `meaning`) VALUES
 -- Table structure for table `groups`
 --
 
+DROP TABLE IF EXISTS `groups`;
 CREATE TABLE `groups` (
   `id` int(1) NOT NULL,
   `name` varchar(6) DEFAULT NULL
@@ -78,6 +81,7 @@ INSERT INTO `groups` (`id`, `name`) VALUES
 -- Table structure for table `priorities`
 --
 
+DROP TABLE IF EXISTS `priorities`;
 CREATE TABLE `priorities` (
   `id` int(1) NOT NULL,
   `name` varchar(6) DEFAULT NULL
@@ -98,6 +102,7 @@ INSERT INTO `priorities` (`id`, `name`) VALUES
 -- Table structure for table `sizes`
 --
 
+DROP TABLE IF EXISTS `sizes`;
 CREATE TABLE `sizes` (
   `id` int(1) NOT NULL,
   `name` varchar(6) DEFAULT NULL
@@ -118,6 +123,7 @@ INSERT INTO `sizes` (`id`, `name`) VALUES
 -- Table structure for table `statuses`
 --
 
+DROP TABLE IF EXISTS `statuses`;
 CREATE TABLE `statuses` (
   `id` int(1) NOT NULL,
   `name` varchar(11) DEFAULT NULL
@@ -137,6 +143,7 @@ INSERT INTO `statuses` (`id`, `name`) VALUES
 -- Table structure for table `tasks`
 --
 
+DROP TABLE IF EXISTS `tasks`;
 CREATE TABLE `tasks` (
   `id` int(2) NOT NULL,
   `task` varchar(22) DEFAULT NULL,
