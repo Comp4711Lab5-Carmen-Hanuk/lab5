@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2017 at 07:17 AM
--- Server version: 10.1.19-MariaDB
--- PHP Version: 5.6.28
+-- Generation Time: Mar 08, 2017 at 01:06 AM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 7.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -33,6 +33,14 @@ CREATE TABLE `ci_sessions` (
   `timestamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `data` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ci_sessions`
+--
+
+INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
+('duorkvq0plevptsrkh4urk5ud562q00s', '::1', 1488931476, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438383933313436323b75736572726f6c657c733a353a224775657374223b),
+('r4ij0a6kn1dg1clbdhjjf0lgp3p7ceod', '::1', 1488931462, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438383933313436323b75736572726f6c657c733a353a224775657374223b);
 
 -- --------------------------------------------------------
 
