@@ -25,14 +25,49 @@ class Views extends Application
         $this->render('template_secondary'); 
     }
     
-    function makePrioritizedPanel($tasks) {
-    $parms = ['display_tasks' => []];
-    return $this->parser->parse('by_priority',$parms,true);
+    function makePrioritizedPanel($tasks){
+        foreach ($tasks as $task){
+            if ($task->status != 2){
+                $undone[] = $task;
+            }
+        }
+        usort($undone, 'orderByPriority');
+        foreach ($undone as $task){
+            $task->priority = $this->priorities->get($task->priority)->name;
+        }
+        foreach ($undone as $task){
+            $converted[] = (array) $task;
+        }
+        $parms = ['display_tasks' => $converted];
+        return $this->parser->parse('by_priority', $parms, true);
     }
     
     function makeCategorizedPanel($tasks) {
-    $parms = ['display_tasks' => []];
-    return $this->parser->parse('by_category',$parms,true);
+     $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];
+      return $this->parser->parse('by_category',$parms,true);
     }
-
 }
+
+    function orderByPriority($a, $b){
+	    if ($a->priority > $b->priority){
+	        return -1;
+            }
+	    elseif ($a->priority < $b->priority){
+	        return 1;
+            }
+	    else{
+	        return 0;
+            }
+    }
+    
+    function orderByCategory($a, $b){
+	    if ($a->group < $b->group){
+	        return -1;
+            }
+	    elseif ($a->group > $b->group){
+	        return 1;
+            }
+	    else{
+	        return 0;
+            }
+    }
