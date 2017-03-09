@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Views extends Application
 {
     public function index()
@@ -12,7 +13,8 @@ class Views extends Application
         $this->render('template_secondary'); 
     }
     
-    function makePrioritizedPanel($tasks) {
+    function makePrioritizedPanel($tasks) 
+    {
         foreach ($tasks as $task)
         {
             if ($task->status != 2)
@@ -32,7 +34,8 @@ class Views extends Application
         return $this->parser->parse('by_priority', $parms, true);
     }
     
-    function makeCategorizedPanel($tasks) {
+    function makeCategorizedPanel($tasks) 
+    {
         $parms = ['display_tasks' => $this->tasks->getCategorizedTasks()];
         
         $role = $this->session->userdata('userrole');
@@ -40,6 +43,7 @@ class Views extends Application
         
         return $this->parser->parse('by_category',$parms,true);
     }
+    
     function complete(){
         $role = $this->session->userdata('userrole');
         if ($role != ROLE_OWNER) redirect('/work');
@@ -55,12 +59,13 @@ class Views extends Application
         $this->index();
     }
 }
+
 function orderByPriority($a, $b)
-    {
-        if ($a->priority > $b->priority)
-            return -1;
-        elseif ($a->priority < $b->priority)
-            return 1;
-        else
-            return 0;
-    }   
+{
+    if ($a->priority > $b->priority)
+        return -1;
+    elseif ($a->priority < $b->priority)
+        return 1;
+    else
+        return 0;
+}   
