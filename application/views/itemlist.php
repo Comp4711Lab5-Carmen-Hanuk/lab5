@@ -5,5 +5,5 @@
                 <th>Task</th>
                 <th>Status</th>
         </tr>
-        {display_tasks}  
+        {display_tasks}
 </table>
